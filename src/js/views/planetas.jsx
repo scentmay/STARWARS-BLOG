@@ -1,7 +1,7 @@
 import React from "react";
 //import { Link } from "react-router-dom";
 
-export function Personaje () {
+export function Planeta () {
 
   return(
       <div className="card m-2" style={{minWidth: '18rem'}}>
@@ -14,5 +14,3 @@ export function Personaje () {
       </div>
    );
 }
-
-
