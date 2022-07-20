@@ -10,7 +10,7 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
-import { Personaje } from './views/personaje.jsx';
+import { Personaje } from './component/personaje.jsx';
 
 
 //create your first component
@@ -29,7 +29,7 @@ const Layout = () => {
 							<Home />
 						</Route>
 						<Route exact path="/personaje">
-							<Demo/>
+							<Demo />
 
 						</Route>
 						<Route exact path="/single/:theid">
