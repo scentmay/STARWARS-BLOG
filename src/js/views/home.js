@@ -23,6 +23,24 @@ export const Home = () => {
 
 	listaPersonajes();
 
+	const [planeta, setPlaneta]= useState([]);
+
+	//función que trae todos los planetas
+	const listaPlanetas = () => {
+		fetch("https://www.swapi.tech/api/planets/")
+		.then(res => res.json())
+		.then(data => {
+			console.log(data)
+			let nombre = data.results[0].name
+			console.log(nombre);
+			setPlaneta(nombre);
+			console.log(planeta)
+		})
+		.catch(err => console.error(err))
+	}
+
+	listaPlanetas();
+
 
 	return (
 	<div>

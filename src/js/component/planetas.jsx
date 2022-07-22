@@ -5,7 +5,7 @@ export function Planeta () {
 
   return(
       <div className="card m-2" style={{minWidth: '18rem'}}>
-      <img src="..." className="card-img-top" alt="..." />
+      <img src="https://starwars-visualguide.com/assets/img/planets/2.jpg" className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">Card title</h5>
           <p className="card-text"></p>
