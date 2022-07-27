@@ -16,7 +16,7 @@ export const Home = () => {
 		<div className="text-center mt-5 d-flex overflow-scroll" style={{ overflow: 'auto', whiteSpace: 'nowrap' }}>
 			
 			{people.map((item) => {
-				return <Personaje character={item}></Personaje>
+				return <Personaje character={item} clase='people'></Personaje>
 			})}
 
 		</div>
@@ -24,7 +24,7 @@ export const Home = () => {
 		<div className="text-center mt-5 d-flex overflow-scroll" style={{ overflow: 'auto', whiteSpace: 'nowrap' }}>
 			
 			{planets.map((item) => {
-				return <Planeta planet={item}></Planeta>
+				return <Planeta planet={item} clase='planets'></Planeta>
 			})}
 	
 		</div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-export function Personaje ({character}) {
+export function Personaje ({character, clase}) {
 
 const [details, setDetails] = useState({});
 
@@ -47,7 +48,7 @@ useEffect(() => {
           {/*La interrogación antes del punto le indica al programa que si no tiene nada que cargar no lo ponga */}
           <p className="card-text">Género: {details?.gender}<br></br> 
           Color de pelo: {details?.hair_color}<br></br>Color de ojos: {details?.eye_color}</p>
-          <a href="#" className="btn btn-primary">Detalles</a>
+          <Link to={`/${clase}/${character.uid}`} class="btn btn-dark link-warning">Detalles</Link>
         </div>
       </div>
    );
