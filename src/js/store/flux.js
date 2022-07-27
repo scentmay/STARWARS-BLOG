@@ -40,10 +40,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log('Error al cargar los planetas');
 					}
 				})
+				// Esto es lo que nos llega de la API
+				// {
+				// 	"uid": "1",
+				// 	"name": "Tatooine",
+				// 	"url": "https://www.swapi.tech/api/planets/1"
+				// }
 				//Introducimos los planetas recuperados en la store
 				.then (data => {
 					let planetaRecuperado = data.results;
-					setStore({Planeta: planetaRecuperado})
+					setStore({planets: planetaRecuperado})
 				})
 			},
 

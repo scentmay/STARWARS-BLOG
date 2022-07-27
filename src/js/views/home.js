@@ -19,19 +19,14 @@ export const Home = () => {
 				return <Personaje character={item}></Personaje>
 			})}
 
-			
-			
 		</div>
 		<h2 style={{color: 'white'}} className="m-3">Planetas</h2>
 		<div className="text-center mt-5 d-flex overflow-scroll" style={{ overflow: 'auto', whiteSpace: 'nowrap' }}>
-			<Planeta/>
-			<Planeta/>
-			<Planeta/>
-			<Planeta/>
-			<Planeta/>
-			<Planeta/>
-			<Planeta/>
-			<Planeta/>
+			
+			{planets.map((item) => {
+				return <Planeta planet={item}></Planeta>
+			})}
+	
 		</div>
 	</div>
 )
