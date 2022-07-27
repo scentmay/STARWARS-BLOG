@@ -10,7 +10,7 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
-import { Personaje } from './views/personaje.jsx';
+
 
 
 //create your first component
