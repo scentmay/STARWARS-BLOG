@@ -7,29 +7,24 @@ import { Context } from "../store/appContext";
 export const Home = () => {
 
 	const {store, action} = useContext(Context);
-	let [personajes, planetas] = [store.people, store.planets];
-
+	
+	let [people, planets, vehicles] = [store.people, store.planets, store.vehicles];
+	
 	return (
 	<div>
-		<h2>Personajes</h2>
+		<h2 style={{color: 'white'}} className="m-3">Personajes</h2>
 		<div className="text-center mt-5 d-flex overflow-scroll" style={{ overflow: 'auto', whiteSpace: 'nowrap' }}>
-			{
-				personajes.map((item, index) =>{
-					console.log('prueba')
-				})
-			}
 			
-			{/* <Personaje />
-			<Personaje />
-			<Personaje />
-			<Personaje />
-			<Personaje />
-			<Personaje />
-			<Personaje />
-			<Personaje /> */}
+			{people.map((item) => {
+				return <Personaje character={item}></Personaje>
+			})}
+
+			
+			
 		</div>
-		<h2>Planetas</h2>
+		<h2 style={{color: 'white'}} className="m-3">Planetas</h2>
 		<div className="text-center mt-5 d-flex overflow-scroll" style={{ overflow: 'auto', whiteSpace: 'nowrap' }}>
+			<Planeta/>
 			<Planeta/>
 			<Planeta/>
 			<Planeta/>
