@@ -1,45 +1,81 @@
+
+
 const getState = ({ getStore, getActions, setStore }) => {
+	
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			people:[],
+			planets: [],
+			vehicles: []
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			// Función para traer personajes de la API
+			getPeople: () => {
+				fetch ('https://www.swapi.tech/api/people/')
+				.then (res => {
+					if (res.ok){
+						return res.json();
+					}else {
+						console.log('Error al cargar los personajes');
+					}
+				})
+				//Introducimos los personajes recuperados en la store
+				.then (data => {
+					let personajeRecuperado = data.results;
+					//Esto es lo que llega de la API (uno de los objetos)
+					//{
+					//	"uid": "1",
+					//	"name": "Luke Skywalker",
+					//	"url": "https://www.swapi.tech/api/people/1"
+					//}
+					//ahora lo guardamos en la store
+					setStore({people: personajeRecuperado})
+				})
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+			// Función para traer planetas de la API
+			getPlanets: () => {
+				fetch ('https://www.swapi.tech/api/planets/')
+				.then (res => {
+					if (res.ok){
+						return res.json();
+					}else {
+						console.log('Error al cargar los planetas');
+					}
+				})
+				// Esto es lo que nos llega de la API
+				// {
+				// 	"uid": "1",
+				// 	"name": "Tatooine",
+				// 	"url": "https://www.swapi.tech/api/planets/1"
+				// }
+				//Introducimos los planetas recuperados en la store
+				.then (data => {
+					let planetaRecuperado = data.results;
+					setStore({planets: planetaRecuperado})
+				})
 			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
+			//Función para traer vehiculos de la API
+			getVehicles: () => {
+				fetch ('https://www.swapi.tech/api/vehicles/')
+				.then (res => {
+					if (res.ok){
+						return res.json();
+					}else {
+						console.log('Error al cargar los vehiculos');
+					}
+				})
+				//Introducimos los vehiculos recuperados en la store
+				.then (data => {
+					let vehiculoRecuperado = data.results;
+					setStore({Planeta: vehiculoRecuperado})
+				})
 			}
+
 		}
+		
 	};
+	
 };
 
 export default getState;
