@@ -4,7 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			people:[],
 			planets: [],
-			vehicles: []
+			vehicles: [],
+			favoritos: []
 		},
 		actions: {
 			// Función para traer personajes de la API
@@ -68,6 +69,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let vehiculoRecuperado = data.results;
 					setStore({Planeta: vehiculoRecuperado})
 				})
+			},
+
+			//Añadir favorito
+			setFav: (name, url) => {
+				let temporal =[...getStore().favoritos]
+				//Lógica para no añadir un elemento si YA está en esta lista
+				let repetido = false;
+				temporal.map( item => {
+					if (item.name == name){
+						repetido = true;
+					}
+				})
+				if (!repetido){
+					temporal.push({"name": name, "url": url})
+					setStore({
+						favorites: temporal
+					})
+				}
+			},
+
+			//Borrar favorito
+			deleteFav: (name) => {
+				let temporal = getStore().favorites.filter((item) => item !== name); 
+				setStore({favoritos: temporal})
 			}
 
 		}
