@@ -17,7 +17,7 @@ export const Home = () => {
 		<div className="text-center mt-5 d-flex overflow-scroll" style={{ overflow: 'auto', whiteSpace: 'nowrap' }}>
 			
 			{people.map((item) => {
-				return <Personaje character={item} clase='characters'></Personaje>
+				return <Personaje character={item} clase='people' clase2='characters'></Personaje>
 			})}
 
 

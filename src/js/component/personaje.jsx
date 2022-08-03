@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export function Personaje ({character, clase}) {
+export function Personaje ({character, clase, clase2}) {
 
 const [details, setDetails] = useState({});
 
@@ -42,7 +42,7 @@ useEffect(() => {
 
   return(
       <div className="card m-2" style={{minWidth: '18rem'}}>
-      <img src={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`} className="card-img-top" alt="..." />
+      <img src={`https://starwars-visualguide.com/assets/img/${clase2}/${character.uid}.jpg`} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{character.name}</h5>
           {/*La interrogación antes del punto le indica al programa que si no tiene nada que cargar no lo ponga */}

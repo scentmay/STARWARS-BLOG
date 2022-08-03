@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import '../../styles/single.css';
 
-export function Single ({object}) {
+export function Single () {
 	const {store, actions} = useContext(Context);
 	const {clase, theid} = useParams();
 	const [details, setDetails] = useState({});
@@ -45,12 +45,17 @@ export function Single ({object}) {
 		})
 	},[]);
 
-	useEffect(() => {
-		if(store.favoritos.includes(details))
-			setIsFavorite(true)
-	
+	// useEffect(() => {
+	// 	if(store.favoritos.includes(details))
+	// 		setIsFavorite(true)
+	// },[details]);
 
-	},[details]);
+
+	// for (let item of store.favoritos) {
+	// 	console.log(item)
+	// 	if (item.name == details.name) setIsFavorite(true)
+	// }
+
 
 
 
@@ -58,7 +63,8 @@ export function Single ({object}) {
 		<div>
 			<div className="contenedor-superior">
 				<div className="imagen">
-					<img className='imagen' src={`https://starwars-visualguide.com/assets/img/${clase}/${theid}.jpg`}/>
+					<img className='imagen' src={(clase == "people") ? (`https://starwars-visualguide.com/assets/img/characters/${theid}.jpg`):(`https://starwars-visualguide.com/assets/img/${clase}/${theid}.jpg`)
+					}/>
 				</div>
 				<div className="texto">
 					{details.name}
