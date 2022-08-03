@@ -17,8 +17,10 @@ export function Single ({object}) {
 		e.preventDefault();
 		let favs = [...store.favoritos];
 		console.log(favs);
-		setIsFavorite(!isFavorite);
+		setIsFavorite(!isFavorite); //conmutamos estado
 		//console.log(isFavorite);
+		//Usamos la exclamación porque no da tiempo a que cambie el estado del componente,
+		//por eso utilizamos el estado contrario en la condición del if
 		if (!isFavorite){
 			favs.push({"name": details.name, "url": details.url});
 		}else {
