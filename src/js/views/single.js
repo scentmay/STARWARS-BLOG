@@ -54,7 +54,6 @@ export function Single ({object}) {
 
 
 
->>>>>>> sergio
 	return (
 		<div>
 			<div className="contenedor-superior">

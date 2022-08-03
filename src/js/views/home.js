@@ -37,7 +37,7 @@ export const Home = () => {
 				return <Vehicle vehicle={item} clase='vehicles'></Vehicle>
 			})}
 	
-
+		</div>
 		{/* Renderizar favoritos */}
 		<div className="favoritos">
 			<ul>
@@ -52,6 +52,6 @@ export const Home = () => {
 			</ul>
 		</div>
 	</div>
-	</div>
+	
 )
 };
