@@ -5,7 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			people:[],
 			planets: [],
 			vehicles: [],
-			favoritos: []
+			favoritos: [{name: "Luke Skywalker", url: "laquesea"}]
 		},
 		actions: {
 			// Función para traer personajes de la API
@@ -67,33 +67,42 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//Introducimos los vehiculos recuperados en la store
 				.then (data => {
 					let vehiculoRecuperado = data.results;
-					setStore({Planeta: vehiculoRecuperado})
+					setStore({vehicles: vehiculoRecuperado})
 				})
 			},
+
+			setFavs: (newFavs) => {
+				console.log("Entrando...")
+				setStore({favoritos: newFavs})
+			}
+
+
+
 
 			//Añadir favorito
-			setFav: (name, url) => {
-				let temporal =[...getStore().favoritos]
-				//Lógica para no añadir un elemento si YA está en esta lista
-				let repetido = false;
-				temporal.map( item => {
-					if (item.name == name){
-						repetido = true;
-					}
-				})
-				if (!repetido){
-					temporal.push({"name": name, "url": url})
-					setStore({
-						favorites: temporal
-					})
-				}
-			},
+			// setFav: (name, url) => {
+			// 	let temporal =[...getStore().favoritos]
+			// 	//Lógica para no añadir un elemento si YA está en esta lista
+			// 	// let repetido = false;
+			// 	alert("Ejecutando....", name, url)
+			// 	// let aux = temporal.map( item => {
+			// 	// 	if (item.name == name){
+			// 	// 		repetido = true;
+			// 	//  	}
+			// 	//  })
+			// 	 	// if( )
+			// 		temporal.push({"name": name, "url": url})
+			// 		setStore({
+			// 		favoritos: temporal
+			// 		})
+				
+			// },
 
 			//Borrar favorito
-			deleteFav: (name) => {
-				let temporal = getStore().favorites.filter((item) => item !== name); 
-				setStore({favoritos: temporal})
-			}
+			// deleteFav: (name) => {
+			// 	let temporal = getStore().favorites.filter((item) => item !== name); 
+			// 	setStore({favoritos: temporal})
+			// }
 
 		}
 		
