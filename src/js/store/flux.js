@@ -6,7 +6,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			people:[],
 			planets: [],
-			vehicles: []
+			vehicles: [],
+			favoritos: [{name: "Luke Skywalker", url: "laquesea"}]
 		},
 		actions: {
 			// Función para traer personajes de la API
@@ -70,6 +71,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let vehiculoRecuperado = data.results;
 					setStore({vehicles: vehiculoRecuperado})
 				})
+			},
+
+			setFavs: (newFavs) => {
+				console.log("Entrando...")
+				setStore({favoritos: newFavs})
 			}
 
 		}

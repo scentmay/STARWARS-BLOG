@@ -9,7 +9,7 @@ export const Home = () => {
 
 	const {store, action} = useContext(Context);
 	
-	let [people, planets, vehicles] = [store.people, store.planets, store.vehicles];
+	let [people, planets, vehicles, favoritos] = [store.people, store.planets, store.vehicles, store.favoritos];
 	
 	return (
 	<div>
@@ -37,7 +37,21 @@ export const Home = () => {
 				return <Vehicle vehicle={item} clase='vehicles'></Vehicle>
 			})}
 	
+
+		{/* Renderizar favoritos */}
+		<div className="favoritos">
+			<ul>
+				{favoritos.map((item) => {
+					return( 
+					<>
+						<li>{item.name}</li>
+						<li>{item.url}</li>
+					</>
+					)
+				})}
+			</ul>
 		</div>
+	</div>
 	</div>
 )
 };
