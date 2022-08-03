@@ -46,11 +46,11 @@ export function Single ({object}) {
 	},[]);
 
 	useEffect(() => {
-		for (let item of store.favoritos) {
-			console.log(item)
-			if (item.name == details.name) setIsFavorite(true)
-		}
-	},[]);
+		if(store.favoritos.includes(details))
+			setIsFavorite(true)
+	
+
+	},[details]);
 
 
 
