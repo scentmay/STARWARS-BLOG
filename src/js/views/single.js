@@ -29,7 +29,7 @@ export function Single ({object}) {
 		<div>
 			<div className="contenedor-superior">
 				<div className="imagen">
-					<img className='imagen' src={`https://starwars-visualguide.com/assets/img/characters/${theid}.jpg`}/>
+					<img className='imagen' src={`https://starwars-visualguide.com/assets/img/${clase}/${theid}.jpg`}/>
 				</div>
 				<div className="texto">
 					{details.name}

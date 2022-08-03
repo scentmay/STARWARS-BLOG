@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export function Planeta ({planet}) {
+export function Planeta ({planet, clase}) {
 
   //Procedemos de igual manera que en Personaje
 
@@ -44,7 +44,7 @@ export function Planeta ({planet}) {
         <div className="card-body">
           <h5 className="card-title">{planet.name}</h5>
           <p className="card-text">Población:{details?.population}<br></br>Terreno: {details?.terrain}</p>
-          <a href="#" className="btn btn-primary">Detalles</a>
+          <Link to={`/${clase}/${planet.uid}`} class="btn btn-dark link-warning">Detalles</Link>
         </div>
       </div>
    );
