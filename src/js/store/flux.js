@@ -68,7 +68,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//Introducimos los vehiculos recuperados en la store
 				.then (data => {
 					let vehiculoRecuperado = data.results;
-					setStore({Planeta: vehiculoRecuperado})
+					setStore({vehicles: vehiculoRecuperado})
 				})
 			}
 
