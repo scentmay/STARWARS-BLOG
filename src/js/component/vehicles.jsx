@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export function Personaje ({character, clase}) {
+export function Vehicle ({vehicle, clase}) {
 
 const [details, setDetails] = useState({});
 
@@ -10,7 +9,7 @@ const [details, setDetails] = useState({});
 // Este useEffect lo vamos a usar de manera auxiliar para guardar los datos particulares de cada personaje, por lo tanto se ejecuta siempre al principio
 useEffect(() => {
 
-  fetch (`https://www.swapi.tech/api/people/${character.uid}`)
+  fetch (`https://www.swapi.tech/api/vehicles/${vehicle.uid}`)
   .then (res => {
     if (res.ok){
       return res.json();
@@ -43,17 +42,14 @@ useEffect(() => {
 
   return(
       <div className="card m-2" style={{minWidth: '18rem'}}>
-      <img src={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`} className="card-img-top" alt="..." />
+      <img src={`https://starwars-visualguide.com/assets/img/vehicles/${vehicle.uid}.jpg`} className="card-img-top" alt="..." />
         <div className="card-body">
-          <h5 className="card-title">{character.name}</h5>
+          <h5 className="card-title"></h5>
           {/*La interrogación antes del punto le indica al programa que si no tiene nada que cargar no lo ponga */}
-          <p className="card-text">Género: {details?.gender}<br></br> 
-          Color de pelo: {details?.hair_color}<br></br>Color de ojos: {details?.eye_color}</p>
-          <Link to={`/${clase}/${character.uid}`} class="btn btn-dark link-warning">Detalles</Link>
-
+          <p className="card-text">Género<br></br> 
+          Color de pelo<br></br>Color de ojos</p>
+          <Link to={`/${clase}/${vehicle.uid}`} class="btn btn-dark link-warning">Detalles</Link>
         </div>
       </div>
    );
 }
-
-

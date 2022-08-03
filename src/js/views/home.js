@@ -1,71 +1,43 @@
 import "../../styles/home.css";
 import { Personaje } from '../component/personaje.jsx';
 import { Planeta } from '../component/planetas.jsx';
-import React, { useState } from 'react';
+import { Vehicle } from '../component/vehicles.jsx';
+import React, {useContext} from "react";
+import { Context } from "../store/appContext";
 
 export const Home = () => {
 
-	const [personaje, setPersonaje]= useState([]);
-
-	//función que trae todos los personajes
-	const listaPersonajes = () => {
-		fetch("https://www.swapi.tech/api/people/")
-		.then(res => res.json())
-		.then(data => {
-			console.log(data)
-			let nombre = data.results[0].name
-			console.log(nombre);
-			setPersonaje(nombre);
-			console.log(personaje)
-		})
-		.catch(err => console.error(err))
-	}
-
-	listaPersonajes();
-
-	const [planeta, setPlaneta]= useState([]);
-
-	//función que trae todos los planetas
-	const listaPlanetas = () => {
-		fetch("https://www.swapi.tech/api/planets/")
-		.then(res => res.json())
-		.then(data => {
-			console.log(data)
-			let nombre = data.results[0].name
-			console.log(nombre);
-			setPlaneta(nombre);
-			console.log(planeta)
-		})
-		.catch(err => console.error(err))
-	}
-
-	listaPlanetas();
-
-
+	const {store, action} = useContext(Context);
+	
+	let [people, planets, vehicles] = [store.people, store.planets, store.vehicles];
+	
 	return (
 	<div>
-		<h1 >personaje</h1>
+		<h2 style={{color: 'white'}} className="m-3">Personajes</h2>
 		<div className="text-center mt-5 d-flex overflow-scroll" style={{ overflow: 'auto', whiteSpace: 'nowrap' }}>
-			<Personaje />
-			<Personaje />
-			<Personaje />
-			<Personaje />
-			<Personaje />
-			<Personaje />
-			<Personaje />
-			<Personaje />
+			
+			{people.map((item) => {
+				return <Personaje character={item} clase='characters'></Personaje>
+			})}
+
+
 		</div>
-		<h2>Planetas</h2>
+		<h2 style={{color: 'white'}} className="m-3">Planetas</h2>
 		<div className="text-center mt-5 d-flex overflow-scroll" style={{ overflow: 'auto', whiteSpace: 'nowrap' }}>
-			<Planeta/>
-			<Planeta/>
-			<Planeta/>
-			<Planeta/>
-			<Planeta/>
-			<Planeta/>
-			<Planeta/>
+			
+			{planets.map((item) => {
+				return <Planeta planet={item} clase='planets'></Planeta>
+			})}
+	
+		</div>
+		<h2 style={{color: 'white'}} className="m-3">Vehiculos</h2>
+		<div className="text-center mt-5 d-flex overflow-scroll" style={{ overflow: 'auto', whiteSpace: 'nowrap' }}>
+			
+			{vehicles.map((item) => {
+				return <Vehicle vehicle={item} clase='vehicles'></Vehicle>
+			})}
+	
 		</div>
 	</div>
 )
 };
-
