@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import '../../styles/single.css';
+import { CharInfo } from "../component/charInfo.jsx";
+import { PlanetInfo } from "../component/planetInfo.jsx";
+import { VehicleInfo } from "../component/vehicleInfo.jsx";
 
 export function Single () {
 	const {store, actions} = useContext(Context);
@@ -74,7 +77,15 @@ export function Single () {
 				</div>
 			</div>	
 			<div className="caracteristicas">
-				<ul>
+
+					{/* renderizado condicional en función del valor de la variable clase del useState */}
+				
+					
+						{(clase == 'people') && <CharInfo details={details}/>}
+						{(clase == 'planets') && <PlanetInfo details={details}/>}
+						{(clase == 'vehicles') && <VehicleInfo details={details}/>}
+
+				{/* <ul>
 					<li>Altura: {details.height} cm</li>
 					<li>Peso: {details.mass} kg</li>
 					<li>Color de pelo:  {details.hair_color}</li>
@@ -85,7 +96,7 @@ export function Single () {
 					<li>Género: {details.gender}</li>
 					<li>Planeta natal: {details.homeworld}</li>
 					<li>Url: {details.url}</li>
-				</ul>
+				</ul> */}
 			</div>
 			<div className=" d-flex justify-content-center">
 				<Link to={'/'} className="btn btn-dark link-warning btn-lg mt-2">Volver a inicio</Link>

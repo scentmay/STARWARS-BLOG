@@ -45,7 +45,7 @@ export function Planeta ({planet, clase}) {
         <div className="card-body">
           <h5 className="card-title">{planet.name}</h5>
           <p className="card-text">Población:{details?.population}<br></br>Terreno: {details?.terrain}</p>
-          <Link to={`/${clase}/${planet.uid}`} class="btn btn-dark link-warning">Detalles</Link>
+          <Link to={`/${clase}/${planet.uid}`} className="btn btn-dark link-warning">Detalles</Link>
         </div>
       </div>
    );

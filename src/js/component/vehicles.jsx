@@ -48,7 +48,7 @@ useEffect(() => {
           {/*La interrogación antes del punto le indica al programa que si no tiene nada que cargar no lo ponga */}
           <p className="card-text"><br></br> 
           cargo_capacity:{details.cargo_capacity}<br></br>Crew:{details.crew}</p>
-          <Link to={`/${clase}/${vehicle.uid}`} class="btn btn-dark link-warning">Detalles</Link>
+          <Link to={`/${clase}/${vehicle.uid}`} className="btn btn-dark link-warning">Detalles</Link>
         </div>
       </div>
    );
