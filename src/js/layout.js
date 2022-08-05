@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
-import { Single } from "./views/single.jsx";
+import { Single } from "./views/single.js";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";

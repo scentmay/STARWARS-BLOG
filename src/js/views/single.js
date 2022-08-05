@@ -48,16 +48,17 @@ export function Single () {
 
 
 
-	// useEffect(() => {
-	// 	if(store.favoritos.includes(details))
-	// 		setIsFavorite(true)
-	// },[details]);
 
 
-	// for (let item of store.favoritos) {
-	// 	console.log(item)
-	// 	if (item.name == details.name) setIsFavorite(true)
-	// }
+	 useEffect(() => {
+		for (let item of store.favoritos) {
+			console.log(item)
+	   if (item.name == details.name) setIsFavorite(true)
+		}
+	 },[details]);
+
+
+	
 
 	return (
 		<div>
