@@ -1,11 +1,11 @@
 import React from "react";
 
-export function VehicleInfo (details) {
+export function VehicleInfo ({details}) {
     return(
         <>
             <ul>
-				<li>model: {details.model} cm</li>
-				<li>vehicle_class: {details.vehicle_class} kg</li>
+				<li>model: {details.model}</li>
+				<li>vehicle_class: {details.vehicle_class}</li>
 				<li>manufacturer:  {details.manufacturer}</li>
 				<li>cost_in_credits:  {details.cost_in_credits}</li>
 			</ul>

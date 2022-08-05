@@ -13,8 +13,6 @@ export function Single () {
 	const [details, setDetails] = useState({});
 	const [isFavorite, setIsFavorite] = useState(false);
 
-	//let [favoritos] = [store.favoritos];
-	
 
 	const handlePress = (e) => {
 		e.preventDefault();
@@ -40,13 +38,15 @@ export function Single () {
 		  if (res.ok){
 			return res.json();
 		  }else {
-			console.log('Error al cargar los personajes');
+			console.log('Error al cargar los datos');
 		  }
 		})
 		.then (data => {
 			setDetails(data.result.properties);
 		})
 	},[]);
+
+
 
 	// useEffect(() => {
 	// 	if(store.favoritos.includes(details))
@@ -58,9 +58,6 @@ export function Single () {
 	// 	console.log(item)
 	// 	if (item.name == details.name) setIsFavorite(true)
 	// }
-
-
-
 
 	return (
 		<div>
@@ -80,7 +77,6 @@ export function Single () {
 
 					{/* renderizado condicional en función del valor de la variable clase del useState */}
 				
-					
 						{(clase == 'people') && <CharInfo details={details}/>}
 						{(clase == 'planets') && <PlanetInfo details={details}/>}
 						{(clase == 'vehicles') && <VehicleInfo details={details}/>}

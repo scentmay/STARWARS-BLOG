@@ -6,7 +6,7 @@ export function Vehicle ({vehicle, clase}) {
 const [details, setDetails] = useState({});
 
 
-// Este useEffect lo vamos a usar de manera auxiliar para guardar los datos particulares de cada personaje, por lo tanto se ejecuta siempre al principio
+// Este useEffect lo vamos a usar de manera auxiliar para guardar los datos particulares de cada vehículo, por lo tanto se ejecuta siempre al principio
 useEffect(() => {
 
   fetch (`https://www.swapi.tech/api/vehicles/${vehicle.uid}`)
