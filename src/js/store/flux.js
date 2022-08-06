@@ -7,7 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			people:[],
 			planets: [],
 			vehicles: [],
-			favoritos: [{name: "Luke Skywalker", url: "laquesea"}]
+			favoritos: []
 		},
 		actions: {
 			// Función para traer personajes de la API

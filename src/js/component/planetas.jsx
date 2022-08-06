@@ -40,12 +40,12 @@ export function Planeta ({planet, clase}) {
 
 
   return(
-      <div className="card m-2" style={{minWidth: '18rem'}}>
+      <div className="card m-2" style={{minWidth: '18rem', background:"rgb(256, 166, 0, 0)"}}>
       <img src={`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`} className="card-img-top" alt="..." />
         <div className="card-body">
-          <h5 className="card-title">{planet.name}</h5>
-          <p className="card-text">Población:{details?.population}<br></br>Terreno: {details?.terrain}</p>
-          <Link to={`/${clase}/${planet.uid}`} className="btn btn-dark link-warning">Detalles</Link>
+          <h5 style={{color: 'white'}} className="card-title">{planet.name}</h5>
+          <p style={{color: 'white'}} className="card-text">Población:{details?.population}<br></br>Terreno: {details?.terrain}</p>
+          <Link to={`/${clase}/${planet.uid}`} className="btn btn-warning link-dark">Detalles</Link>
         </div>
       </div>
    );

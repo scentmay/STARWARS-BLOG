@@ -41,14 +41,14 @@ useEffect(() => {
 
 
   return(
-      <div className="card m-2" style={{minWidth: '18rem'}}>
+      <div className="card m-2" style={{minWidth: '18rem', background:"rgb(256, 166, 0, 0)"}}>
       <img src={`https://starwars-visualguide.com/assets/img/vehicles/${vehicle.uid}.jpg`} className="card-img-top" alt="..." />
         <div className="card-body">
-          <h5 className="card-title">{details.name}</h5>
+          <h5 style={{color: 'white'}} className="card-title">{details.name}</h5>
           {/*La interrogación antes del punto le indica al programa que si no tiene nada que cargar no lo ponga */}
-          <p className="card-text"><br></br> 
+          <p style={{color: 'white'}} className="card-text"><br></br> 
           cargo_capacity:{details.cargo_capacity}<br></br>Crew:{details.crew}</p>
-          <Link to={`/${clase}/${vehicle.uid}`} className="btn btn-dark link-warning">Detalles</Link>
+          <Link to={`/${clase}/${vehicle.uid}`} className="btn btn-warning link-dark">Detalles</Link>
         </div>
       </div>
    );
