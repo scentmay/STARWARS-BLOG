@@ -39,6 +39,7 @@ export const Home = () => {
 	
 		</div>
 		{/* Renderizar favoritos */}
+		<h2 style={{color: 'white'}} className="m-3">Favoritos</h2>
 		<div className="favoritos">
 			<ul>
 				{favoritos.map((item) => {
