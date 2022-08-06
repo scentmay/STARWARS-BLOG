@@ -46,7 +46,7 @@ export const Home = () => {
 					return( 
 					<>
 						<li>{item.name}</li>
-						<li><a href={item.url}>Ir al favorito</a></li>
+						<li>{item.url}</li>
 					</>
 					)
 				})}

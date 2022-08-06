@@ -23,7 +23,7 @@ export function Single () {
 		//Usamos la exclamación porque no da tiempo a que cambie el estado del componente,
 		//por eso utilizamos el estado contrario en la condición del if
 		if (!isFavorite){
-			favs.push({"name": details.name, "url": `/${clase}/${theid}`
+			favs.push({"name": details.name, "url": details.url
 		});
 		}else {
 			favs = favs.filter((item) => item.name !== details.name );
