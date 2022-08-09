@@ -1,9 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import default_image from '../../img/fallo-carga-imagen.jpg';
 
 export function Personaje ({character, clase, clase2}) {
 
 const [details, setDetails] = useState({});
+const [image, setImage] = useState(default_image)
+
+//Gestión de fallo en la carga de imágenes
+//Comprobamos si el fecht devuelve ok, en ese caso seteamos la imagen
+//caso contrario no hace nada y la imagen que cargue será la que tenemos fijada por defecto
+function imageDefault(image) {
+  var photo = `https://starwars-visualguide.com/assets/img/${clase2}/${character.uid}.jpg`;
+
+  fetch(photo).then((result)=>{
+    if (result) {
+      setImage(photo);
+    }
+  });
+}
 
 
 // Este useEffect lo vamos a usar de manera auxiliar para guardar los datos particulares de cada personaje, por lo tanto se ejecuta siempre al principio
@@ -40,9 +55,13 @@ useEffect(() => {
 },[]);
 
 
+useEffect (()=> {
+  imageDefault();
+},[]) 
+
   return(
       <div className="card m-2" style={{minWidth: '18rem', background:"rgb(256, 166, 0, 0)"}}>
-      <img src={`https://starwars-visualguide.com/assets/img/${clase2}/${character.uid}.jpg`} className="card-img-top" alt="..." />
+      <img src={image} className="card-img-top" alt="Fallo al recuperar imagen" />
         <div className="card-body">
           <h5 style={{color: 'white'}} className="card-title">{character.name}</h5>
           {/*La interrogación antes del punto le indica al programa que si no tiene nada que cargar no lo ponga */}
@@ -53,5 +72,3 @@ useEffect(() => {
       </div>
    );
 }
-
-

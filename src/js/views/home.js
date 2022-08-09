@@ -5,10 +5,11 @@ import { Vehicle } from '../component/vehicles.jsx';
 import React, {useContext} from "react";
 import { Context } from "../store/appContext";
 
+
 export const Home = () => {
 
 	const {store, action} = useContext(Context);
-	
+
 	let [people, planets, vehicles, favoritos] = [store.people, store.planets, store.vehicles, store.favoritos];
 	
 	return (
