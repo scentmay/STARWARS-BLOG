@@ -66,7 +66,7 @@ export function Single () {
 			<div className="contenedor-superior">
 				<div className="imagen">
 					<img className='imagen' src={(clase == "people") ? (`https://starwars-visualguide.com/assets/img/characters/${theid}.jpg`):(`https://starwars-visualguide.com/assets/img/${clase}/${theid}.jpg`)
-					}/>
+					}/> 
 				</div>
 				<div className="texto">
 					{details.name}
@@ -79,9 +79,9 @@ export function Single () {
 
 					{/* renderizado condicional en función del valor de la variable clase del useState */}
 				
-						{(clase == 'people') && <CharInfo details={details}/>}
-						{(clase == 'planets') && <PlanetInfo details={details}/>}
-						{(clase == 'vehicles') && <VehicleInfo details={details}/>}
+						{(clase == 'people') && details.name && <CharInfo details={details}/>}
+						{(clase == 'planets') && details.name &&<PlanetInfo details={details}/>}
+						{(clase == 'vehicles') && details.name && <VehicleInfo details={details}/>}
 
 				{/* <ul>
 					<li>Altura: {details.height} cm</li>
