@@ -10,6 +10,7 @@ const [image, setImage] = useState(default_image)
 //Gestión de fallo en la carga de imágenes
 //Comprobamos si el fecht devuelve ok, en ese caso seteamos la imagen
 //caso contrario no hace nada y la imagen que cargue será la que tenemos fijada por defecto
+//este bloque se ejecuta con un useEffect al principio de la carga de la página
 function imageDefault(image) {
   var photo = `https://starwars-visualguide.com/assets/img/${clase2}/${character.uid}.jpg`;
 

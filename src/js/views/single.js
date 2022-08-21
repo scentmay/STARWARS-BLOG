@@ -16,7 +16,7 @@ export function Single () {
 
 	const handlePress = (e) => {
 		e.preventDefault();
-		let favs = [...store.favoritos];
+		let favs = [...store.favoritos]; //[...] -> hace una copia del array
 		console.log(favs);
 		setIsFavorite(!isFavorite); //conmutamos estado
 		//console.log(isFavorite);
