@@ -14,22 +14,9 @@ export const Home = () => {
 	
 	return (
 	<div>
-		{/* Renderizar favoritos */}
-		<h2 style={{color: 'black'}} className="m-3 btn btn-warning link-dark">Favoritos</h2>
-		<div className="favoritos">
-			<ul>
-				{favoritos.map((item) => {
-					return( 
-					<>
-						<li>{item.name}</li>
-						<li>{item.url}</li>
-					</>
-					)
-				})}
-			</ul>
-		</div>
+		
 
-		<h2 style={{color: 'white', textDecoration: "underline"}} className="m-3">Personajes</h2>
+		<h2 style={{color: 'gold', textDecoration: "underline"}} className="m-3">Personajes</h2>
 		<div className="text-center mt-5 d-flex overflow-scroll" style={{ overflow: 'auto', whiteSpace: 'nowrap'}}>
 			
 			{people.map((item) => {
@@ -38,7 +25,7 @@ export const Home = () => {
 
 
 		</div>
-		<h2 style={{color: 'white',textDecoration: "underline"}} className="m-3">Planetas</h2>
+		<h2 style={{color: 'gold',textDecoration: "underline"}} className="m-3">Planetas</h2>
 		<div className="text-center mt-5 d-flex overflow-scroll" style={{ overflow: 'auto', whiteSpace: 'nowrap' }}>
 			
 			{planets.map((item) => {
@@ -46,7 +33,7 @@ export const Home = () => {
 			})}
 	
 		</div>
-		<h2 style={{color: 'white', textDecoration: "underline"}} className="m-3">Vehiculos</h2>
+		<h2 style={{color: 'gold', textDecoration: "underline"}} className="m-3">Vehiculos</h2>
 		<div className="text-center mt-5 d-flex overflow-scroll" style={{ overflow: 'auto', whiteSpace: 'nowrap' }}>
 			
 			{vehicles.map((item) => {
