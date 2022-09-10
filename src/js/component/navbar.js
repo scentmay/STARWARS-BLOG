@@ -31,7 +31,7 @@ export const Navbar = () => {
         <ul className="dropdown-menu">
           {favoritos.map((fav) => {
             return (
-              <div className="d-flex align-items-center justify-content-around">
+              <div className="d-flex align-items-center justify-content-between m-1">
                 <Link to={`/${fav.clase}/${fav.id}`}>
                   {fav.name}
                 </Link>

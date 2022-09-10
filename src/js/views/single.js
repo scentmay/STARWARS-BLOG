@@ -59,11 +59,11 @@ export function Single () {
 		for (let item of store.favoritos) {
 			console.log(item)
 	   if (item.name == details.name) setIsFavorite(true)
+	   else setIsFavorite(false)
 		}
-	 },[details]);
+	 },[details, isFavorite]);
 
 
-	
 
 	return (
 		<div>
