@@ -79,22 +79,9 @@ export function Single () {
 
 					{/* renderizado condicional en función del valor de la variable clase del useState */}
 				
-						{(clase == 'people') && details.name && <CharInfo details={details}/>}
+						{(clase == 'people')  && <CharInfo details={details}/>}
 						{(clase == 'planets') && details.name &&<PlanetInfo details={details}/>}
 						{(clase == 'vehicles') && details.name && <VehicleInfo details={details}/>}
-
-				{/* <ul>
-					<li>Altura: {details.height} cm</li>
-					<li>Peso: {details.mass} kg</li>
-					<li>Color de pelo:  {details.hair_color}</li>
-					<li>Color de ojos:  {details.eye_color}</li>
-				</ul>
-				<ul className="ms-5">
-					<li>Año de nacimiento: {details.birth_year}</li>
-					<li>Género: {details.gender}</li>
-					<li>Planeta natal: {details.homeworld}</li>
-					<li>Url: {details.url}</li>
-				</ul> */}
 			</div>
 			<div className=" d-flex justify-content-center">
 				<Link to={'/'} className="btn btn-dark link-warning btn-lg mt-2">Volver a inicio</Link>
