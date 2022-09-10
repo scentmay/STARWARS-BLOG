@@ -28,15 +28,15 @@ export function Planeta ({planet, clase}) {
     imageDefault();
   },[]) 
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    fetch(`https://www.swapi.tech/api/planets/${planet.uid}`)
-    .then(res => {
-      if (res.ok) return res.json();
-      else console.log ('Error al cargar los planetas');
-    })
-    .then(data => {
-      setDetails(data.result.properties);
+  //   fetch(`https://www.swapi.tech/api/planets/${planet.uid}`)
+  //   .then(res => {
+  //     if (res.ok) return res.json();
+  //     else console.log ('Error al cargar los planetas');
+  //   })
+  //   .then(data => {
+  //     setDetails(data.result.properties);
       //Este es el objeto que almacenamos
       // "result": {
       //   "properties": {
@@ -55,8 +55,8 @@ export function Planeta ({planet, clase}) {
       //   }
 
 
-    })
-  },[]);
+  //   })
+  // },[]);
 
 
   return(
@@ -64,8 +64,8 @@ export function Planeta ({planet, clase}) {
       <img src={image} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 style={{color: 'white'}} className="card-title">{planet.name}</h5>
-          <p style={{color: 'white'}} className="card-text">Población:{details?.population}<br></br>Terreno: {details?.terrain}</p>
-          <Link to={`/${clase}/${planet.uid}`} className="btn btn-warning link-dark">Detalles</Link>
+          {/* <p style={{color: 'white'}} className="card-text">Población:{details?.population}<br></br>Terreno: {details?.terrain}</p> */}
+          <Link to={`/${clase}/${planet.uid}`} className="btn btn-warning link-dark mt-3">Detalles</Link>
         </div>
       </div>
    );

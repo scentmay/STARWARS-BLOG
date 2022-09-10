@@ -27,19 +27,19 @@ useEffect (()=> {
 },[]) 
 
 // Este useEffect lo vamos a usar de manera auxiliar para guardar los datos particulares de cada vehículo, por lo tanto se ejecuta siempre al principio
-useEffect(() => {
+// useEffect(() => {
 
-  fetch (`https://www.swapi.tech/api/vehicles/${vehicle.uid}`)
-  .then (res => {
-    if (res.ok){
-      return res.json();
-    }else {
-      console.log('Error al cargar los personajes');
-    }
-  })
+//   fetch (`https://www.swapi.tech/api/vehicles/${vehicle.uid}`)
+//   .then (res => {
+//     if (res.ok){
+//       return res.json();
+//     }else {
+//       console.log('Error al cargar los personajes');
+//     }
+//   })
   //Introducimos los datos de los personajes recuperados en la variable useState que hemos creado para usarla posteriormente
-  .then (data => {
-    setDetails(data.result.properties);
+  // .then (data => {
+  //   setDetails(data.result.properties);
     // Este es el objeto que guarda de la API
     // "result": {
     //   "properties": {
@@ -56,19 +56,19 @@ useEffect(() => {
     //       "homeworld": "https://www.swapi.tech/api/planets/1",
     //       "url": "https://www.swapi.tech/api/people/1"
     //   }
-  })
-},[]);
+//   })
+// },[]);
 
 
   return(
       <div className="card m-2" style={{minWidth: '18rem', background:"rgb(256, 166, 0, 0)"}}>
       <img src={image} className="card-img-top" alt="..." />
         <div className="card-body">
-          <h5 style={{color: 'white'}} className="card-title">{details.name}</h5>
-          {/*La interrogación antes del punto le indica al programa que si no tiene nada que cargar no lo ponga */}
+          <h5 style={{color: 'white'}} className="card-title">{vehicle.name}</h5>
+          {/* La interrogación antes del punto le indica al programa que si no tiene nada que cargar no lo ponga
           <p style={{color: 'white'}} className="card-text"><br></br> 
-          cargo_capacity:{details.cargo_capacity}<br></br>Crew:{details.crew}</p>
-          <Link to={`/${clase}/${vehicle.uid}`} className="btn btn-warning link-dark">Detalles</Link>
+          cargo_capacity:{details.cargo_capacity}<br></br>Crew:{details.crew}</p> */}
+          <Link to={`/${clase}/${vehicle.uid}`} className="btn btn-warning link-dark mt-3">Detalles</Link>
         </div>
       </div>
    );
