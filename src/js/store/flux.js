@@ -74,7 +74,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			setFavs: (newFavs) => {
-				console.log("Entrando...")
+				//console.log("Entrando...")
+				setStore({favoritos: newFavs})
+			},
+
+			delFav: (nameFav) => {
+				console.log("Entrando en borrar favoritos")
+				const newFavs = getStore().favoritos.filter((fav)=> fav.name !== nameFav)
+				console.log(newFavs)
 				setStore({favoritos: newFavs})
 			}
 
